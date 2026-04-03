@@ -29,10 +29,6 @@ Run index.html in your browser
 
 This project demonstrates front-end development skills, UI/UX design sense, and the ability to build a brand-focused website.
 
-📸 Preview
-
-(Add screenshots here for better impact)
-
 📬 Contact
 
 Feel free to connect or reach out for collaboration!
