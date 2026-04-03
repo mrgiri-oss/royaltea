@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brew the Royal Tradition</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img
+      src="https://static.wikia.nocookie.net/logopedia/images/b/bf/Royal_Chai.png/revision/latest?cb=20200612162642"
+      alt="Royal Chai Logo"
+      class="nav-logo enhanced-logo"
+    />
+  </nav>
+
+  <!-- Hero -->
+  <main class="container">
+
+    <!-- Steam -->
+    <div class="steam-wrapper">
+      <span class="steam"></span>
+      <span class="steam"></span>
+      <span class="steam"></span>
+    </div>
+
+    <h1 class="tagline">Brew the Royal Tradition</h1>
+
+    <p class="description">
+      A premium instant chai tea premix inspired by royal Indian households.
+      Rich aroma, authentic taste, and effortless preparation — crafted for
+      those who value tradition and elegance.
+    </p>
+
+    <div class="launch-box" id="launchMessage">☕ Brewing Begins…</div>
+
+
+    <!-- Elegant Signup -->
+    <div class="signup-elegant">
+
+      <p class="signup-title">Join the Royal Circle</p>
+
+      <form
+        class="email-box elegant-form"
+        name="royal-chai-signup"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field">
+
+        <input type="hidden" name="form-name" value="royal-chai-signup" />
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <button type="submit">Notify Me</button>
+      </form>
+
+
+      <div class="gold-underline"></div>
+
+      <div class="social-icons elegant-social">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+      </div>
+
+      <!-- Success Message -->
+      <div class="success-message">
+        <span>👑</span>
+        <p>You’re on the royal list.<br />We’ll notify you at launch.</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

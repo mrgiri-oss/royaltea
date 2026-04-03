@@ -1,0 +1,542 @@
+  :root {
+    --gold: #c9a24d;
+    --brown: #2b1d12;
+    --cream: #f5efe6;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Layout */
+  body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #4a331f, #1f140b);
+    color: var(--cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .navbar::after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(201,162,77,0.8),
+      transparent
+    );
+    bottom: 8px;
+  }
+
+
+  .nav-logo {
+    width: 130px;
+    opacity: 0.95;
+    margin-top: 4px;
+    margin-left: -1160px;
+    height: 40px;
+  }
+
+  .enhanced-logo {
+    filter:
+      drop-shadow(0 2px 6px rgba(0,0,0,0.6))
+      drop-shadow(0 0 12px rgba(201, 162, 77, 0.35));
+    transition: transform 0.4s ease, filter 0.4s ease;
+    animation: royalGlow 4s ease-in-out infinite;
+  }
+
+  /* Gentle luxury hover */
+  .enhanced-logo:hover {
+    transform: scale(1.05);
+    filter:
+      drop-shadow(0 4px 10px rgba(0,0,0,0.7))
+      drop-shadow(0 0 18px rgba(201, 162, 77, 0.6));
+
+  }
+
+  @keyframes royalGlow {
+    0% { filter: drop-shadow(0 0 8px rgba(201,162,77,0.3)); }
+    50% { filter: drop-shadow(0 0 14px rgba(201,162,77,0.6)); }
+    100% { filter: drop-shadow(0 0 8px rgba(201,162,77,0.3)); }
+  }
+
+
+
+  /* Hero */
+  .container {
+    text-align: center;
+    max-width: 480px;
+    padding: 2rem;
+    margin-top: -3rem;
+    animation: fadeIn 1.5s ease;
+  }
+
+  /* Steam */
+  .steam-wrapper {
+    position: relative;
+    height: 40px;
+    margin: 0 auto 1rem;
+    pointer-events: none;
+  }
+
+  .steam {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(245, 239, 230, 0.6);
+    filter: blur(6px);
+    animation: steamRise 4s infinite ease-in-out;
+  }
+
+  .steam:nth-child(1) {
+    margin-left: -20px;
+    animation-delay: 0s;
+  }
+
+  .steam:nth-child(2) {
+    margin-left: 0;
+    animation-delay: 1.3s;
+  }
+
+  .steam:nth-child(3) {
+    margin-left: 20px;
+    animation-delay: 2.6s;
+  }
+
+  @keyframes steamRise {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-45px) scale(1.6);
+      opacity: 0;
+    }
+  }
+
+  /* Text */
+  .tagline {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Launch badge */
+  .launch-box {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    background: rgba(201, 162, 77, 0.12);
+    margin-bottom: 1rem;
+    margin-top: 1px;
+    animation: pulseGlow 2.5s infinite ease-in-out;
+  }
+
+  @keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 rgba(201,162,77,0.2); }
+    50% { box-shadow: 0 0 14px rgba(201,162,77,0.5); }
+    100% { box-shadow: 0 0 0 rgba(201,162,77,0.2); }
+  }
+
+  /* Email */
+  .email-box {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .email-box input {
+    flex: 1;
+    padding: 0.7rem;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+  }
+
+  .email-box button {
+    background: var(--gold);
+    color: var(--brown);
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .email-box button:hover {
+    opacity: 0.9;
+  }
+
+  /* Social */
+  .social-icons a {
+    color: var(--cream);
+    margin: 0 0.6rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .tagline {
+      font-size: 1.6rem;
+    }
+
+    .email-box {
+      flex-direction: column;
+    }
+
+    .email-box button {
+      width: 100%;
+    }
+  }
+
+
+
+/* ===============================
+   Enhanced Signup & Social Section
+   (Appended – does NOT override existing styles)
+================================ */
+
+/* Signup card wrapper */
+.signup-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 162, 77, 0.35);
+  border-radius: 14px;
+  padding: 1.6rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+  margin-bottom: 1.5rem;
+}
+
+/* Signup title */
+.signup-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.4px;
+}
+
+/* Enhanced input */
+.signup-card .email-box input {
+  background: rgba(255,255,255,0.15);
+  color: var(--cream);
+  border: 1px solid rgba(201,162,77,0.3);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-card .email-box input::placeholder {
+  color: rgba(245,239,230,0.7);
+}
+
+.signup-card .email-box input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 10px rgba(201,162,77,0.4);
+}
+
+/* Enhanced button */
+.signup-card .email-box button {
+  background: linear-gradient(135deg, #d6b35a, #b8943a);
+  box-shadow: 0 4px 12px rgba(201,162,77,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-card .email-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(201,162,77,0.6);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  width: 60%;
+  margin: 1.2rem auto;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(201,162,77,0.6),
+    transparent
+  );
+}
+
+/* Social icons – royal seal style */
+.signup-card .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.signup-card .social-icons a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,162,77,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  transition: all 0.35s ease;
+}
+
+.signup-card .social-icons a:hover {
+  background: var(--gold);
+  color: var(--brown);
+  box-shadow: 0 0 14px rgba(201,162,77,0.6);
+  transform: translateY(-2px);
+}
+
+/* Mobile refinements */
+@media (max-width: 480px) {
+  .signup-card {
+    padding: 1.3rem;
+  }
+
+  .signup-card .social-icons a {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ===============================
+   Elegant Signup Override (Light & Premium)
+================================ */
+
+.signup-elegant {
+  margin-top: 1.8rem;
+}
+
+/* Refined form */
+.elegant-form {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Input: embedded & minimal */
+.elegant-form input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(201,162,77,0.5);
+  border-radius: 0;
+  padding: 0.6rem 0.2rem;
+  color: var(--cream);
+  width: 260px;
+}
+
+.elegant-form input::placeholder {
+  color: rgba(245,239,230,0.6);
+}
+
+.elegant-form input:focus {
+  border-bottom-color: var(--gold);
+  box-shadow: 0 6px 10px -8px rgba(201,162,77,0.6);
+}
+
+/* Button: ceremonial */
+.elegant-form button {
+  background: linear-gradient(135deg, #d6b35a, #b8943a);
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  box-shadow: 0 4px 12px rgba(201,162,77,0.45);
+}
+
+.elegant-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(201,162,77,0.65);
+}
+
+/* Underline */
+.gold-underline {
+  width: 120px;
+  height: 1px;
+  margin: 1.2rem auto;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(201,162,77,0.8),
+    transparent
+  );
+}
+
+/* Social icons: lighter & floating */
+.elegant-social a {
+  border: 1px solid rgba(201,162,77,0.45);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Success message */
+.success-message {
+  display: none;
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+  margin-top: 1rem;
+}
+
+.success-message span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.success-message p {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+/* Steam reacts on hover */
+.container:hover .steam {
+  animation-duration: 2.2s;
+  background: rgba(245,239,230,0.85);
+}
+
+/* ===============================
+   MOBILE LOGO FIX
+================================ */
+
+
+
+/* Mobile navbar alignment */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .nav-logo {
+    width: 130px;
+    height: auto;
+    margin-left: -200px; /* remove hard offset */
+  }
+}
+
+/* ===============================
+   INPUT BACKGROUND FIX
+================================ */
+
+.elegant-form input {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Remove browser autofill color */
+.elegant-form input:-webkit-autofill,
+.elegant-form input:-webkit-autofill:hover,
+.elegant-form input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--cream) !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* ===============================
+   Subtle Royal Background Motion
+   (Appended – does not replace existing bg)
+================================ */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    circle at top,
+    #5a3d26,
+    #1f140b
+  );
+  opacity: 0.35;
+  animation: royalAmbient 22s ease-in-out infinite alternate;
+}
+
+/* Ambient warmth motion */
+@keyframes royalAmbient {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  50% {
+    filter: hue-rotate(-6deg) brightness(1.05);
+  }
+  100% {
+    filter: hue-rotate(4deg) brightness(1);
+  }
+}
+
+.success-message {
+  display: none;
+  opacity: 0;
+  margin-top: 1.2rem;
+  color: var(--gold);
+  animation: fadeInSuccess 0.6s ease forwards;
+}
+
+.success-message.show {
+  display: block;
+}
+
+@keyframes fadeInSuccess {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
